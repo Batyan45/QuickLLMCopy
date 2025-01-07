@@ -59,6 +59,56 @@
 				"npm: watch-tests"
 			],
 			"problemMatcher": []
+		},
+        {
+            "label": "VSCODE publish",
+            "type": "shell",
+            "command": "npm run version ${input:versionType} && git add . && git commit -m \"Release v$(node -p \"require('./package.json').version\")\" && git tag v$(node -p \"require('./package.json').version\") && git push && git push --tags && vsce publish",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "VSCODE publish marketplace",
+            "type": "shell",
+            "command": "vsce publish",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "VSCODE build",
+            "type": "shell",
+            "command": "vsce package",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+			"label": "Run Tests",
+			"type": "npm",
+			"script": "test",
+			"group": "test",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		}
+	],
+	"inputs": [
+		{
+			"id": "versionType",
+			"type": "pickString",
+			"description": "Version type to bump",
+			"options": ["patch", "minor", "major"],
+			"default": "patch"
 		}
 	]
 }

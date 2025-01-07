@@ -3,6 +3,7 @@
   "displayName": "Quick LLM Copy",
   "description": "Copy code files with path information for LLM conversations",
   "version": "0.0.1",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -11,6 +12,10 @@
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Batyan45/QuickLLMCopy.git"
+  },
   "contributes": {
     "commands": [
       {

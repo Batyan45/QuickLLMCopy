@@ -1,5 +1,7 @@
 # Quick LLM Copy
 
+![Extension Icon](images/icon.png)
+
 Simple VSCode extension that allows you to copy code files with their relative paths in a format suitable for LLM conversations.
 
 ## Features
