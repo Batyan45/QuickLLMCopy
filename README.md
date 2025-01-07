@@ -1,10 +1,10 @@
-# Copy for LLM
+# Quick LLM Copy
 
 Simple VSCode extension that allows you to copy code files with their relative paths in a format suitable for LLM conversations.
 
 ## Features
 
-- Adds "Copy for LLM" option to the context menu in file explorer
+- Adds "Quick LLM Copy" option to the context menu in file explorer
 - Supports copying multiple files at once
 - Includes relative file paths in the copied text
 - Formats the output in a way that's easy to paste into LLM conversations
@@ -12,7 +12,7 @@ Simple VSCode extension that allows you to copy code files with their relative p
 ## Usage
 
 1. Right-click on a file or select multiple files in the VSCode explorer
-2. Click "Copy for LLM" from the context menu
+2. Click "Quick LLM Copy" from the context menu
 3. The code will be copied to your clipboard in the following format: 
 
 ```

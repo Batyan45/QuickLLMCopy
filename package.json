@@ -1,6 +1,6 @@
 {
   "name": "copy-for-llm",
-  "displayName": "Copy for LLM",
+  "displayName": "Quick LLM Copy",
   "description": "Copy code files with path information for LLM conversations",
   "version": "0.0.1",
   "engines": {
@@ -15,7 +15,7 @@
     "commands": [
       {
         "command": "copy-for-llm.copyFiles",
-        "title": "Copy for LLM"
+        "title": "Quick LLM Copy"
       }
     ],
     "menus": {
