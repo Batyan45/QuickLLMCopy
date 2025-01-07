@@ -38,6 +38,13 @@ This extension does not contribute any settings.
 
 None at the moment.
 
+## Future Plans
+
+- Add support for custom output formats
+- Add the ability to shorten code by removing comments or anything else
+- Add support for filtering files by extension
+- Improve handling of large files
+
 ## Release Notes
 
 See CHANGELOG.md for detailed release notes.
