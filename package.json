@@ -23,7 +23,7 @@
         {
           "command": "copy-for-llm.copyFiles",
           "when": "resourceLangId",
-          "group": "navigation"
+          "group": "2_workspace"
         }
       ]
     }
