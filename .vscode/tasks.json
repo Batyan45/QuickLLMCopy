@@ -61,6 +61,19 @@
 			"problemMatcher": []
 		},
         {
+            "label": "compile",
+            "type": "npm",
+            "script": "compile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": ["$tsc", "$eslint-stylish"]
+        },
+        {
             "label": "VSCODE publish",
             "type": "shell",
             "command": "npm run version ${input:versionType} && git add . && git commit -m \"Release v$(node -p \"require('./package.json').version\")\" && git tag v$(node -p \"require('./package.json').version\") && git push && git push --tags && vsce publish",

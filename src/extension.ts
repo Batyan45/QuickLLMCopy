@@ -6,7 +6,7 @@ import * as path from 'path';
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand('copy-for-llm.copyFiles', async (uri: vscode.Uri, uris: vscode.Uri[]) => {
+	let disposable = vscode.commands.registerCommand('quick-llm-copy.copyFiles', async (uri: vscode.Uri, uris: vscode.Uri[]) => {
 		try {
 			// Use the array of uris if multiple files are selected, otherwise use the single uri
 			const filesToProcess = uris || [uri];
