@@ -2,7 +2,7 @@
   "name": "quick-llm-copy",
   "displayName": "Quick LLM Copy",
   "description": "Copy code files with path information for LLM conversations",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "batyan-soft",
   "license": "MIT",
   "icon": "images/icon.png",
