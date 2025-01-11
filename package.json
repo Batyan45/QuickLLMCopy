@@ -27,6 +27,16 @@
         "title": "Quick LLM Copy"
       }
     ],
+    "configuration": {
+      "title": "Quick LLM Copy",
+      "properties": {
+        "quickLLMCopy.prefixText": {
+          "type": "string",
+          "default": "Provided code:",
+          "description": "The text that appears before the copied code content"
+        }
+      }
+    },
     "menus": {
       "explorer/context": [
         {

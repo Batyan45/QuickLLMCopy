@@ -82,12 +82,22 @@ suite('Extension Test Suite', () => {
 		console.log('Copying file:', uri.fsPath);
 		
 		try {
+			// Test with default prefix
 			await vscode.commands.executeCommand('quick-llm-copy.copyFiles', uri);
-			const clipboardContent = await vscode.env.clipboard.readText();
+			let clipboardContent = await vscode.env.clipboard.readText();
 			console.log('Clipboard content:', clipboardContent);
-			assert.ok(clipboardContent.includes('Provided code:'), 'Should include header');
+			assert.ok(clipboardContent.includes('Provided code:'), 'Should include default header');
 			assert.ok(clipboardContent.includes('test1.txt'), 'Should include filename');
 			assert.ok(clipboardContent.includes('Test content 1'), 'Should include file content');
+
+			// Test with custom prefix
+			await vscode.workspace.getConfiguration().update('quickLLMCopy.prefixText', 'Custom Header:', true);
+			await vscode.commands.executeCommand('quick-llm-copy.copyFiles', uri);
+			clipboardContent = await vscode.env.clipboard.readText();
+			assert.ok(clipboardContent.includes('Custom Header:'), 'Should include custom header');
+
+			// Reset to default
+			await vscode.workspace.getConfiguration().update('quickLLMCopy.prefixText', undefined, true);
 		} catch (error) {
 			console.error('Error during single file copy test:', error);
 			throw error;

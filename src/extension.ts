@@ -52,7 +52,11 @@ export function activate(context: vscode.ExtensionContext) {
 				}
 			}
 
-			let resultText = 'Provided code:\n\n';
+			// Get prefix text from configuration
+			const config = vscode.workspace.getConfiguration('quickLLMCopy');
+			const prefixText = config.get<string>('prefixText', 'Provided code:');
+
+			let resultText = `${prefixText}\n\n`;
 
 			for (const fileUri of allFiles) {
 				try {
