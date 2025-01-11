@@ -29,7 +29,7 @@
       "explorer/context": [
         {
           "command": "quick-llm-copy.copyFiles",
-          "when": "resourceLangId",
+          "when": "resourceLangId || explorerResourceIsFolder",
           "group": "2_workspace"
         }
       ]
