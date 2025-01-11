@@ -12,7 +12,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:quick-llm-copy.copyFiles"
+  ],
   "main": "./dist/extension.js",
   "repository": {
     "type": "git",
@@ -47,7 +49,7 @@
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
-    "test": "vscode-test",
+    "test": "node ./out/test/runTest.js",
     "build-vsix": "npm run package && vsce package",
     "version": "npm version --no-git-tag-version"
   },
