@@ -35,7 +35,9 @@ File: path/to/file2
 
 ## Extension Settings
 
-This extension does not contribute any settings.
+This extension contributes the following settings:
+
+* `quickLLMCopy.prefixText`: The text that appears before the copied code content (default: "Provided code:")
 
 ## Known Issues
 
