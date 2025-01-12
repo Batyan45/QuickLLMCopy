@@ -2,6 +2,12 @@
 
 All notable changes to the "Quick LLM Copy" extension will be documented in this file.
 
+## [0.0.4] - 2025-01-12
+
+### Added
+- Added configurable prefix text setting (`quickLLMCopy.prefixText`)
+- Users can now customize the text that appears before copied code content
+
 ## [0.0.3] - 2025-01-11
 
 ### Added
