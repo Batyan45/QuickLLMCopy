@@ -13,7 +13,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:quick-llm-copy.copyFiles"
+    "onCommand:quick-llm-copy.copyFiles",
+    "onCommand:quick-llm-copy.copyFilesWithCodebase"
   ],
   "main": "./dist/extension.js",
   "repository": {
@@ -25,6 +26,10 @@
       {
         "command": "quick-llm-copy.copyFiles",
         "title": "Quick LLM Copy"
+      },
+      {
+        "command": "quick-llm-copy.copyFilesWithCodebase",
+        "title": "Quick LLM Copy (with Codebase)"
       }
     ],
     "configuration": {
@@ -34,6 +39,11 @@
           "type": "string",
           "default": "Provided code:",
           "description": "The text that appears before the copied code content"
+        },
+        "quickLLMCopy.codebaseText": {
+          "type": "string",
+          "default": "Codebase structure. You can ask for other files if needed:",
+          "description": "The text that appears before the codebase structure"
         }
       }
     },
@@ -41,6 +51,11 @@
       "explorer/context": [
         {
           "command": "quick-llm-copy.copyFiles",
+          "when": "resourceLangId || explorerResourceIsFolder",
+          "group": "2_workspace"
+        },
+        {
+          "command": "quick-llm-copy.copyFilesWithCodebase",
           "when": "resourceLangId || explorerResourceIsFolder",
           "group": "2_workspace"
         }

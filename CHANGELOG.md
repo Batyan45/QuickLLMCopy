@@ -2,6 +2,13 @@
 
 All notable changes to the "Quick LLM Copy" extension will be documented in this file.
 
+## [0.0.5] - 2025-03-02
+
+### Added
+- Added "Quick LLM Copy (with Codebase)" option to include project directory structure
+- Added configurable codebase text setting (`quickLLMCopy.codebaseText`)
+- Users can now customize the text that appears before the codebase structure
+
 ## [0.0.4] - 2025-01-12
 
 ### Added
