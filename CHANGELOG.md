@@ -2,6 +2,12 @@
 
 All notable changes to the "Quick LLM Copy" extension will be documented in this file.
 
+## [0.0.7] - 2025-08-11
+
+### Changed
+- Upgraded Node.js version to 20.x in CI workflow
+- Fix warnings
+
 ## [0.0.6] - 2025-08-11
 
 ### Added

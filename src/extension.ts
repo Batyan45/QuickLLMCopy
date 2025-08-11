@@ -45,14 +45,14 @@ async function generateDirectoryTree(rootUri: vscode.Uri, indent: string = ''): 
 	const entries = await vscode.workspace.fs.readDirectory(rootUri);
 	
 	// Sort entries: directories first, then files
-	entries.sort((a, b) => {
-		const aIsDir = a[1] === vscode.FileType.Directory;
-		const bIsDir = b[1] === vscode.FileType.Directory;
-		
-		if (aIsDir && !bIsDir) return -1;
-		if (!aIsDir && bIsDir) return 1;
-		return a[0].localeCompare(b[0]);
-	});
+    entries.sort((a, b) => {
+    	const aIsDir = a[1] === vscode.FileType.Directory;
+    	const bIsDir = b[1] === vscode.FileType.Directory;
+    	
+    	if (aIsDir && !bIsDir) { return -1; }
+    	if (!aIsDir && bIsDir) { return 1; }
+    	return a[0].localeCompare(b[0]);
+    });
 	
 	for (let i = 0; i < entries.length; i++) {
 		const [name, type] = entries[i];
@@ -206,7 +206,7 @@ export function activate(context: vscode.ExtensionContext) {
 				// Prefer working tree changes over index changes when duplicates exist
 				for (const change of [...indexChanges, ...mergeChanges, ...workingTreeChanges]) {
 					const uri: vscode.Uri | undefined = change?.uri ?? change?.resourceUri;
-					if (!uri) continue;
+					if (!uri) { continue; }
 					const key = uri.fsPath;
 					changedFileUris.set(key, uri);
 				}
