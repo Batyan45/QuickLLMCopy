@@ -8,6 +8,8 @@ Simple VSCode extension that allows you to copy code files with their relative p
 
 - Adds "Quick LLM Copy" option to the context menu in file explorer
 - Adds "Quick LLM Copy (with Codebase)" option to include the project directory structure
+- Adds a Quick LLM Copy (files) button in Source Control (Git) to copy whole files with current changes
+- Adds a Quick LLM Copy (diff) button in Source Control (Git) to copy only Git diffs
 - Supports copying multiple files at once
 - Supports recursive copying of directories and their contents
 - Includes relative file paths in the copied text
@@ -63,6 +65,36 @@ Project structure:
 │       └── helpers.ts
 └── package.json
 ```
+```
+
+### Copy SCM Changes
+
+- Open the Source Control view
+- Click the Quick LLM Copy button in the view title bar (copy icon)
+- This copies all current Git changes (staged, unstaged, and untracked files that exist on disk) using the same format as the Standard Copy
+
+### Copy SCM Diff
+
+- Open the Source Control view
+- Click the Quick LLM Copy (SCM Diff) button in the view title bar (diff icon)
+- This copies a unified Git diff (patch) for all current changes:
+  - Includes staged, unstaged, and untracked files (untracked shown as diffs from /dev/null)
+  - Skips deleted files' contents (diff will show deletions)
+
+Example output:
+
+```
+Provided code:
+
+Repository: your-repo
+diff --git a/src/example.ts b/src/example.ts
+index abcdef0..1234567 100644
+--- a/src/example.ts
++++ b/src/example.ts
+@@ -1,2 +1,3 @@
+ export const a = 1;
+ export const b = 2;
++export const c = 3;
 ```
 
 ## Requirements

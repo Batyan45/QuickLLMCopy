@@ -14,7 +14,9 @@
   ],
   "activationEvents": [
     "onCommand:quick-llm-copy.copyFiles",
-    "onCommand:quick-llm-copy.copyFilesWithCodebase"
+    "onCommand:quick-llm-copy.copyFilesWithCodebase",
+    "onCommand:quick-llm-copy.copyScmChanges",
+    "onCommand:quick-llm-copy.copyScmDiff"
   ],
   "main": "./dist/extension.js",
   "repository": {
@@ -30,6 +32,16 @@
       {
         "command": "quick-llm-copy.copyFilesWithCodebase",
         "title": "Quick LLM Copy (with Codebase)"
+      },
+      {
+        "command": "quick-llm-copy.copyScmChanges",
+        "title": "Quick LLM Copy (files)",
+        "icon": "$(circuit-board)"
+      },
+      {
+        "command": "quick-llm-copy.copyScmDiff",
+        "title": "Quick LLM Copy (diff)",
+        "icon": "$(diff)"
       }
     ],
     "configuration": {
@@ -58,6 +70,18 @@
           "command": "quick-llm-copy.copyFilesWithCodebase",
           "when": "resourceLangId || explorerResourceIsFolder",
           "group": "2_workspace"
+        }
+      ],
+      "scm/title": [
+        {
+          "command": "quick-llm-copy.copyScmChanges",
+          "group": "navigation",
+          "when": "scmProvider == git"
+        },
+        {
+          "command": "quick-llm-copy.copyScmDiff",
+          "group": "navigation",
+          "when": "scmProvider == git"
         }
       ]
     }

@@ -2,6 +2,12 @@
 
 All notable changes to the "Quick LLM Copy" extension will be documented in this file.
 
+## [0.0.6] - 2025-08-11
+
+### Added
+- Quick LLM Copy (files) button in Source Control (Git) view title to copy all current changes
+- Quick LLM Copy (diff) button to copy only Git diffs (unified patches) for staged, unstaged, and untracked files
+
 ## [0.0.5] - 2025-03-02
 
 ### Added
