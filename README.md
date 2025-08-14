@@ -24,38 +24,39 @@ Simple VSCode extension that allows you to copy code files with their relative p
 
 ### Standard Copy Format
 
-```
+````text
 Provided code:
 
 File: path/to/file1
 ```
-// file1 contents
+...file1 contents...
 ```
 
 File: path/to/file2
 ```
-// file2 contents
+...file2 contents...
 ```
-```
+````
 
 ### Copy with Codebase Format
 
-```
+````text
 Provided code:
 
 File: path/to/file1
 ```
-// file1 contents
+...file1 contents...
 ```
 
 File: path/to/file2
 ```
-// file2 contents
+...file2 contents...
 ```
+````
 
 Codebase structure. You can ask for other files if needed:
 
-```
+```text
 Project structure:
 ├── src/
 │   ├── components/
@@ -64,7 +65,6 @@ Project structure:
 │   └── utils/
 │       └── helpers.ts
 └── package.json
-```
 ```
 
 ### Copy SCM Changes
@@ -83,7 +83,7 @@ Project structure:
 
 Example output:
 
-```
+```diff
 Provided code:
 
 Repository: your-repo
@@ -105,8 +105,8 @@ index abcdef0..1234567 100644
 
 This extension contributes the following settings:
 
-* `quickLLMCopy.prefixText`: The text that appears before the copied code content (default: "Provided code:")
-* `quickLLMCopy.codebaseText`: The text that appears before the codebase structure (default: "You can ask for other files from the codebase if needed:")
+- `quickLLMCopy.prefixText`: The text that appears before the copied code content (default: "Provided code:")
+- `quickLLMCopy.codebaseText`: The text that appears before the codebase structure (default: "You can ask for other files from the codebase if needed:")
 
 ## Known Issues
 
@@ -114,6 +114,7 @@ None at the moment.
 
 ## Future Plans
 
+- Add support for copying contents of open tabs/editors
 - Add support for custom output formats
 - Add the ability to shorten code by removing comments or anything else
 - Add support for filtering files by extension
